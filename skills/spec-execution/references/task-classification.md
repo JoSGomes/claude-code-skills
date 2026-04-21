@@ -129,6 +129,31 @@ Haiku coleta os fatos; Opus julga se são suficientes.
 
 ---
 
+## Exemplos Data Science
+
+Projetos DS têm tarefas com routing específico — data leakage e reprodutibilidade têm custo diferente de bugs normais.
+
+| Tarefa DS | Modelo | Justificativa |
+|-----------|--------|---------------|
+| Implementar pipeline de EDA (distribuições, correlações, outliers) | Sonnet (`data-science-expert`) | Geração de código com conhecimento de pandas/seaborn |
+| Implementar modelo sklearn com Pipeline + CV | Sonnet | Implementação com padrões DS bem definidos |
+| Revisar código DS para data leakage e seeds | Haiku (`data-science-reviewer`) | Verificação de padrões conhecidos — extração, não raciocínio |
+| Verificar se seeds estão completos no código | Haiku | Checar condição objetiva ("os 4 seeds estão setados?") |
+| Implementar fine-tuning HuggingFace | Sonnet (`data-science-expert`) | Código com nuances de tokenização e training loop |
+| Decidir estratégia de validação para dados temporais | Opus | Trade-off real: TimeSeriesSplit vs Walk-forward vs Hold-out |
+| Validar se experimento é reprodutível e estatisticamente válido | Haiku (verificar fatos) + Opus (`research-validator`) | Haiku coleta: seeds, splits, test set usage. Opus julga: resultados são válidos? |
+| Implementar pipeline de dados com Polars para dataset > RAM | Sonnet | Código com API específica de lazy evaluation |
+| Configurar experiment tracking (MLflow/W&B) | Sonnet | Setup de ferramenta com padrões bem documentados |
+
+**Padrão para validação de experimento DS** (caso mais comum de Haiku + Opus):
+
+```
+T_val1 [haiku] — Verificar: seeds setados, preprocessor fitted only on train, test set usado uma vez
+T_val2 [opus]  — Avaliar: dado o que T_val1 encontrou, os resultados são cientificamente válidos?
+```
+
+---
+
 ## Indicadores de classificação errada
 
 | Sinal | Problema | Correção |
@@ -137,3 +162,5 @@ Haiku coleta os fatos; Opus julga se são suficientes.
 | Sonnet propôs 3 abordagens diferentes sem escolher | Decisão com trade-offs reais | Escalar para Opus |
 | Opus usado para "ler este arquivo" | Custo desnecessário | Rebaixar para Haiku |
 | Agente Sonnet lançado para tarefa que cabe no contexto | Overhead desnecessário | Executar inline |
+| `research-validator` Opus usado para "verificar se seed está setado" | Custo x15 desnecessário | Rebaixar para `data-science-reviewer` Haiku |
+| `data-science-reviewer` Haiku usado para "decidir se resultados são válidos" | Requer julgamento, não verificação | Escalar para `research-validator` Opus |
