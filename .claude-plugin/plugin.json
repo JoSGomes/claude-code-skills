@@ -1,10 +1,10 @@
 {
   "name": "claude-code-skills",
-  "version": "1.0.0",
-  "description": "Workflows e skills para desenvolvimento de software e pesquisa científica. Especificação de projetos, agentes Python/Go, validação científica, captura de aprendizados. Roteamento de modelos por custo: Haiku para leitura, Sonnet para código, Opus para raciocínio profundo.",
+  "version": "1.1.0",
+  "description": "Workflows e skills para desenvolvimento de software e pesquisa científica. Especificação de projetos, agentes Python/Go/Data Science, validação científica, captura de aprendizados. Roteamento de modelos por custo: Haiku para leitura, Sonnet para código, Opus para raciocínio profundo.",
   "keywords": [
-    "python", "golang", "research", "scientific", "specification",
-    "planning", "agents", "token-efficient", "learnings"
+    "python", "golang", "data-science", "machine-learning", "research", "scientific",
+    "specification", "planning", "agents", "token-efficient", "learnings", "reproducibility"
   ],
   "author": {
     "name": "JoSGomes"
