@@ -86,6 +86,12 @@ Antes de considerar qualquer resultado de experimento como final:
 
 ---
 
+## README & CHANGELOG
+
+Ao final de qualquer sessão que resulte em alteração de código, atualizar `README.md` e `CHANGELOG.md` do projeto. Ver protocolo completo em **`skills/shared/changelog-readme-protocol.md`**.
+
+---
+
 ## Additional Resources
 
 - **`references/patterns.md`** — Python científico, async, packaging, type hints avançados

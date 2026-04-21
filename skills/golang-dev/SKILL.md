@@ -95,6 +95,12 @@ Se não der para responder as 4 perguntas, a goroutine não foi projetada ainda.
 
 ---
 
+## README & CHANGELOG
+
+Ao final de qualquer sessão que resulte em alteração de código, atualizar `README.md` e `CHANGELOG.md` do projeto. Ver protocolo completo em **`skills/shared/changelog-readme-protocol.md`**.
+
+---
+
 ## Additional Resources
 
 - **`references/patterns.md`** — Concorrência, interfaces, CLI, gRPC, HTTP middleware

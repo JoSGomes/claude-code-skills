@@ -137,6 +137,12 @@ rtk pip install <pkg>
 
 ---
 
+## README & CHANGELOG
+
+Ao final de qualquer sessão que resulte em alteração de código, atualizar `README.md` e `CHANGELOG.md` do projeto. Ver protocolo completo em **`skills/shared/changelog-readme-protocol.md`**.
+
+---
+
 ## Additional Resources
 
 - **`references/patterns.md`** — Exemplos canônicos para as 7 áreas técnicas DS
