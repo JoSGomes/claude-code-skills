@@ -5,7 +5,8 @@ Plugin para Claude Code com workflows e skills para desenvolvimento de software 
 ## Instalação
 
 ```bash
-claude plugin add https://github.com/JoSGomes/claude-code-skills
+claude plugin marketplace add JoSGomes/claude-code-skills
+claude plugin install claude-code-skills
 ```
 
 ## Como funciona
@@ -82,7 +83,9 @@ Todo bash                         →  prefixar com rtk
 
 ```
 claude-code-skills/
-├── .claude-plugin/plugin.json   ← manifesto do plugin
+├── .claude-plugin/
+│   ├── plugin.json              ← manifesto do plugin
+│   └── marketplace.json         ← manifesto do marketplace
 ├── commands/                    ← workflows invocados com /comando
 │   ├── project-spec.md
 │   ├── exec-spec.md

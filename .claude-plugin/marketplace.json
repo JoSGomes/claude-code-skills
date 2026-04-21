@@ -1,0 +1,15 @@
+{
+  "name": "josGomes",
+  "description": "Plugins de JoSGomes para desenvolvimento de software e pesquisa científica com Claude Code.",
+  "plugins": [
+    {
+      "name": "claude-code-skills",
+      "source": "./",
+      "description": "Workflows e skills para desenvolvimento de software e pesquisa científica."
+    }
+  ],
+  "owner": {
+    "name": "JoSGomes",
+    "url": "https://github.com/JoSGomes"
+  }
+}
