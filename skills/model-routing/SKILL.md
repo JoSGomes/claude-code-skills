@@ -92,10 +92,15 @@ RTK passa comandos desconhecidos sem filtrar — sempre seguro usar.
 |--------|-----------|----------------|
 | Leitura + resumo de arquivo | Agente Haiku | Muito baixo |
 | Review rápido de código | Agente Haiku | Muito baixo |
+| Review de código DS (pitfall check) | `data-science-reviewer` Haiku | Muito baixo |
 | Geração de código | Sonnet inline | Médio |
+| Implementação de pipeline de EDA | `data-science-expert` Sonnet | Médio |
+| Implementação/debug de modelo DS | `data-science-expert` Sonnet | Médio |
 | Review de PR multi-arquivo | 3-5 agentes Sonnet paralelos | Médio-alto |
-| Validação científica | 1 agente Opus | Alto |
-| Especificação de projeto | Haiku (docs) + Opus×2 | Alto, one-time |
+| Validação científica | `research-validator` Opus | Alto |
+| Validação de reprodutibilidade de experimento | Haiku (verificar seeds/leakage) + `research-validator` Opus | Alto |
+| Especificação de projeto DS/científico | `document-reader` Haiku + `requirements-analyst` Opus + `phase-planner` Opus | Alto, one-time |
+| Especificação de projeto genérico | Haiku (docs) + Opus×2 | Alto, one-time |
 
 ---
 

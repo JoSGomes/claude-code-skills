@@ -55,6 +55,10 @@ O TASKS.md já define o modelo por tarefa (`[haiku]`, `[sonnet]`, `[opus]`). Res
 |--------|--------|---------------|
 | Explorar/ler código existente | Haiku | Agente paralelo se múltiplos arquivos |
 | Implementar/criar/corrigir | Sonnet | Inline, ler antes de escrever |
+| Implementar pipeline de EDA | Sonnet (`data-science-expert`) | Inline ou agente isolado |
+| Implementar modelo ML/DL (sklearn, PyTorch, HuggingFace) | Sonnet (`data-science-expert`) | Inline ou agente isolado |
+| Review de código DS (data leakage, seeds) | Haiku (`data-science-reviewer`) | Agente, output estruturado |
+| Validar reprodutibilidade do experimento | Haiku (verificar seeds/splits) + Opus (`research-validator`) | Sequencial: Haiku coleta fatos, Opus julga |
 | Decisão de arquitetura | Opus | Agente único, registrar em DECISIONS.md |
 | Validar critérios de sucesso | Haiku (verificar) + Sonnet (corrigir) | Testar com `rtk`, analisar resultado |
 
