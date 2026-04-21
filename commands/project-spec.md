@@ -60,8 +60,17 @@ Se arquivos, URLs ou documentos foram fornecidos:
 
 ## Fase 3: Análise de Requisitos (Opus)
 
+**Detecção de projeto científico/DS**: antes de lançar o agente, verificar se o projeto tem natureza científica. Indicadores — qualquer um presente ativa o modo científico:
+- Keywords no input: "pesquisa", "research", "dataset", "modelo", "model", "treino", "training", "experimento", "experiment", "EDA", "machine learning", "deep learning", "NLP", "dados", "data", "accuracy", "reprodutibilidade"
+- Tipo de projeto informado na Fase 1: "projeto de pesquisa" ou "ambos"
+- Documentos fornecidos contêm: datasets, métricas de avaliação, hipóteses, baselines
+
+**Se projeto científico/DS detectado**, adicionar nota visível ao desenvolvedor antes de lançar o agente:
+> "Detectei que este é um projeto científico/DS. A análise de requisitos será roteada para o `research-validator` (Opus) além do `requirements-analyst`, garantindo que requisitos de reprodutibilidade, rigor estatístico e data leakage sejam identificados explicitamente."
+
 1. Lançar **requirements-analyst** (Opus) com:
    - Descrição do projeto + respostas da Fase 1 + resumos da Fase 2.
+   - Se projeto científico/DS: incluir instrução explícita para identificar requisitos científicos (seeds, splits, reprodutibilidade, métricas de avaliação, data leakage risks).
 
 2. O agente produz: funcionais, não-funcionais, requisitos científicos (se pesquisa), restrições, ambiguidades, riscos.
 
@@ -126,10 +135,19 @@ Após confirmação do plano:
    mkdir -p .specs
    ```
 
-2. Gravar `.specs/PROJECT_SPEC.md`:
+2. Derivar o título simplificado do projeto para uso nos nomes de arquivo:
+   - Pegar o nome do projeto confirmado na Fase 4
+   - Remover artigos e preposições (o, a, os, as, de, do, da, em, e, para, the, of, in, for)
+   - Substituir espaços e símbolos especiais por hifens
+   - Converter para lowercase
+   - Obter a data atual de `currentDate` no contexto (formato `YYYY-MM-DD`)
+   - Exemplo: "Data Science Skill + Agent Pipeline" → `data-science-skill-agent-pipeline`
+   - Nome final: `PROJECT_SPEC_data-science-skill-agent-pipeline_2026-04-21.md`
+
+3. Gravar `.specs/PROJECT_SPEC_[titulo-simplificado]_[YYYY-MM-DD].md`:
 
 ```markdown
-# Project Specification: [Nome do Projeto]
+# Project Specification: [Nome do Projeto] — YYYY-MM-DD
 
 **Data**: [data atual]
 **Versão**: 1.0
@@ -143,7 +161,7 @@ Após confirmação do plano:
 ## 4. Requisitos
 ### Funcionais
 ### Não-Funcionais
-### Científicos/de Pesquisa (se aplicável)
+### Científicos/de Pesquisa (se projeto científico/DS detectado na Fase 3)
 ## 5. Restrições e Premissas
 ## 6. Decisões Técnicas
 ## 7. Plano Faseado
@@ -152,9 +170,9 @@ Após confirmação do plano:
 ## 9. Questões em Aberto
 ```
 
-3. Gravar `.specs/PHASES.md` com apenas o breakdown de fases para referência rápida.
+4. Gravar `.specs/PHASES_[titulo-simplificado]_[YYYY-MM-DD].md` com apenas o breakdown de fases para referência rápida.
 
-4. Gravar `.specs/README.md`:
+5. Gravar `.specs/README.md`:
 ```markdown
 # Specs
 
@@ -162,17 +180,17 @@ Especificações geradas pelo workflow `/project-spec`.
 
 | Arquivo | Descrição |
 |---------|-----------|
-| PROJECT_SPEC.md | Especificação completa |
-| PHASES.md | Breakdown de fases para referência rápida |
+| PROJECT_SPEC_[titulo]_[data].md | Especificação completa |
+| PHASES_[titulo]_[data].md | Breakdown de fases para referência rápida |
 ```
 
-5. Perguntar:
+6. Perguntar:
    > "Especificação gravada em `.specs/`. Deseja também:
    > - [ ] Gerar `.specs/TODO_PHASE1.md` com as tarefas da Fase 1?
    > - [ ] Criar estrutura de diretórios inicial do projeto?
    > - [ ] Capturar aprendizados desta especificação? (`/capture-learning`)"
 
-6. Executar o que for confirmado.
+7. Executar o que for confirmado.
 
 ---
 
