@@ -1,6 +1,6 @@
 ---
 name: data-science-dev
-description: This skill should be used when the user is working on Data Science, ML, or scientific research code — EDA, model training, experiment design, deep learning, NLP, tabular data, or scientific computing. Activates for .py files with DS imports (numpy, pandas, sklearn, torch, transformers), .ipynb Jupyter notebooks, projects with pyproject.toml containing DS dependencies, or when the user mentions EDA, model, training, dataset, experiment, reprodutibilidade, data leakage, or feature engineering. Complements python-dev; use this skill when scientific rigor and research reproducibility are the primary concerns.
+description: This skill should be used when the user is working on Data Science, ML, or scientific research code — EDA, model training, experiment design, deep learning, NLP, tabular data, or scientific computing. Activates for .py files with DS imports (numpy, pandas, sklearn, torch, transformers), .ipynb Jupyter notebooks, projects with pyproject.toml containing DS dependencies, or when the user mentions EDA, model/modelo, training/treino, dataset, experiment/experimento, reprodutibilidade/reproducibility, data leakage, or feature engineering. Complements python-dev; use this skill when scientific rigor and research reproducibility are the primary concerns.
 version: 0.1.0
 ---
 

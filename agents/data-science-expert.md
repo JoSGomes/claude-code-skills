@@ -64,8 +64,10 @@ Before answering, read relevant files. Use `rtk read <file>` for large files. Tr
 2. Config saved with results (not just the model weights)
 3. Environment pinned (`requirements.txt` / `pyproject.toml` with exact versions)
 4. Data checksummed or version-pinned
-5. No test set leakage (see pitfalls)
-6. All random operations use explicit seeds
+5. Preprocessor fitted ONLY on train — never on full dataset
+6. Test set used exactly ONCE — never inside selection loops
+7. Temporal split if data has a time dimension
+8. Notebook: Restart + Run All executed before publishing results
 
 ## Data leakage detection (highest priority)
 
