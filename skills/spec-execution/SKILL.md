@@ -113,6 +113,12 @@ Se durante a execução surgir trabalho relevante que pertence a outra fase:
 
 ---
 
+## README & CHANGELOG
+
+Ao final de qualquer sessão que resulte em alteração de código, atualizar `README.md` e `CHANGELOG.md` do projeto. Ver protocolo completo em **`skills/shared/changelog-readme-protocol.md`**.
+
+---
+
 ## Additional Resources
 
 - **`references/task-classification.md`** — Guia detalhado de como classificar tarefas por modelo

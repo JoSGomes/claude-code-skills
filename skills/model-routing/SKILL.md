@@ -115,6 +115,12 @@ Lançar agente tem overhead de cold start. Só vale quando a tarefa é isolada o
 
 ---
 
+## README & CHANGELOG
+
+Ao final de qualquer sessão que resulte em alteração de código, atualizar `README.md` e `CHANGELOG.md` do projeto. Ver protocolo completo em **`skills/shared/changelog-readme-protocol.md`**.
+
+---
+
 ## Additional Resources
 
 - **`references/cost-patterns.md`** — Anti-patterns de gasto de tokens, custo relativo por operação, caching
